@@ -5,14 +5,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Import database and models
-from app.db.database import engine
-from app.db.models import user
+from app.db.database import engine, Base
+
+from app.db.models.user import User
+from app.db.models.contact import Contact
+from app.db.models.device import Device
+from app.db.models.record import Record
+from app.db.models.alert import Alert
 
 # Uncomment this line to drop all tables
-# user.Base.metadata.drop_all(bind=engine) 
+# Base.metadata.drop_all(bind=engine) 
 
-# Create tables
-user.Base.metadata.create_all(bind=engine)
+# Create all tables
+Base.metadata.create_all(bind=engine)
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware

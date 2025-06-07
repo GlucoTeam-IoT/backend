@@ -44,7 +44,7 @@ To run the FastAPI application, execute the following command:
 python -m uvicorn app.main:app --reload
 ```
 
-You can access the API documentation at `http://127.0.0.1:8000/docs`.
+You can access the API documentation at `http://127.0.0.1:8000/api/docs`.
 
 ## Testing
 
